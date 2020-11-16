@@ -12,6 +12,7 @@ import LandingScreen from './screens/Landing';
 import SignInScreen from './screens/SignIn';
 import PasswordChangeScreen from './screens/PasswordChange';
 import HomeScreen from './screens/Home';
+import ProfileScreen from './screens/Profile';
 import AccountScreen from './screens/Account';
 import AdminScreen from './screens/Admin';
 import SignUpScreen from './screens/SignUp';
@@ -43,6 +44,7 @@ const HomeTabs = () => {
   return (
     <Tab.Navigator>
       <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
   );
 };
