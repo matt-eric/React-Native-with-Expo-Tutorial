@@ -21,13 +21,21 @@ const App = () => {
   return (
     <NavigationContainer>
       <RootStack.Navigator>
-        <RootStack.Screen name="Landing" component={LandingScreen} />
-        <RootStack.Screen name="Sign In">
-          {(props) => (
-            <SignInScreen {...props} onSignIn={handleSignIn} />
-          )}
-        </RootStack.Screen>
-        <RootStack.Screen name="Home" component={HomeScreen} />
+        {isAuthenticated ? (
+          <RootStack.Screen name="Home" component={HomeScreen} />
+        ) : (
+          <>
+            <RootStack.Screen
+              name="Landing"
+              component={LandingScreen}
+            />
+            <RootStack.Screen name="Sign In">
+              {(props) => (
+                <SignInScreen {...props} onSignIn={handleSignIn} />
+              )}
+            </RootStack.Screen>
+          </>
+        )}
       </RootStack.Navigator>
     </NavigationContainer>
   );
