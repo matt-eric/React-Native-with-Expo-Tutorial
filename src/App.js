@@ -5,6 +5,7 @@ import { Button } from 'react-native';
 import LandingScreen from './screens/Landing';
 import SignInScreen from './screens/SignIn';
 import HomeScreen from './screens/Home';
+import SignUpScreen from './screens/SignUp';
 
 const RootStack = createStackNavigator();
 
@@ -49,6 +50,11 @@ const App = () => {
             <RootStack.Screen name="Sign In">
               {(props) => (
                 <SignInScreen {...props} onSignIn={handleSignIn} />
+              )}
+            </RootStack.Screen>
+            <RootStack.Screen name="Sign Up">
+              {(props) => (
+                <SignUpScreen {...props} />
               )}
             </RootStack.Screen>
           </>
