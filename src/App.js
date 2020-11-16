@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-
+import { Button } from 'react-native';
 import LandingScreen from './screens/Landing';
 import SignInScreen from './screens/SignIn';
 import HomeScreen from './screens/Home';
@@ -18,11 +18,25 @@ const App = () => {
     setIsAuthenticated(true);
   };
 
+  const handleSignOut = () => {
+    // TODO implement real sign out mechanism
+
+    setIsAuthenticated(false);
+  };
+
   return (
     <NavigationContainer>
       <RootStack.Navigator>
         {isAuthenticated ? (
-          <RootStack.Screen name="Home" component={HomeScreen} />
+          <RootStack.Screen
+            name="Home"
+            component={HomeScreen}
+            options={{
+              headerRight: () => (
+                <Button onPress={handleSignOut} title="Sign Out" />
+              ),
+            }}
+          />
         ) : (
           <>
             <RootStack.Screen
