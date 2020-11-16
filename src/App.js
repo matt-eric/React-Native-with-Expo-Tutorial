@@ -9,6 +9,15 @@ import HomeScreen from './screens/Home';
 const RootStack = createStackNavigator();
 
 const App = () => {
+
+  const [isAuthenticated, setIsAuthenticated] = React.useState(false);
+
+  const handleSignIn = () => {
+    // TODO implement real sign in mechanism
+
+    setIsAuthenticated(true);
+  };
+  
   return (
     <NavigationContainer>
       <RootStack.Navigator>
