@@ -6,6 +6,7 @@ import LandingScreen from './screens/Landing';
 import SignInScreen from './screens/SignIn';
 import HomeScreen from './screens/Home';
 import SignUpScreen from './screens/SignUp';
+import PasswordForgetScreen from './screens/PasswordForget';
 
 const RootStack = createStackNavigator();
 
@@ -63,6 +64,10 @@ const App = () => {
                 <SignUpScreen {...props} onSignUp={handleSignUp} />
               )}
             </RootStack.Screen>
+            <RootStack.Screen
+              name="Password Forget"
+              component={PasswordForgetScreen}
+            />
           </>
         )}
       </RootStack.Navigator>
