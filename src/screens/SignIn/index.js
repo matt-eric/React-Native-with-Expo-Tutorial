@@ -21,6 +21,12 @@ const SignInScreen = ({ onSignIn, navigation }) => {
         title="Go to Sign Up"
         onPress={() => navigation.navigate('Sign Up')}
       />
+
+      <Button
+        title="Go to Password Forget"
+        onPress={() => navigation.navigate('Password Forget')}
+      />
+
     </View>
   );
 };
