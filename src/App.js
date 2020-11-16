@@ -25,6 +25,12 @@ const App = () => {
     setIsAuthenticated(false);
   };
 
+  const handleSignUp = () => {
+    // TODO implement real sign up mechanism
+
+    setIsAuthenticated(true);
+  };
+
   return (
     <NavigationContainer>
       <RootStack.Navigator>
@@ -54,7 +60,7 @@ const App = () => {
             </RootStack.Screen>
             <RootStack.Screen name="Sign Up">
               {(props) => (
-                <SignUpScreen {...props} />
+                <SignUpScreen {...props} onSignUp={handleSignUp} />
               )}
             </RootStack.Screen>
           </>
