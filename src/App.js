@@ -1,12 +1,27 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import { Button } from 'react-native';
 import LandingScreen from './screens/Landing';
 import SignInScreen from './screens/SignIn';
 import HomeScreen from './screens/Home';
 import SignUpScreen from './screens/SignUp';
 import PasswordForgetScreen from './screens/PasswordForget';
+
+const Drawer = createDrawerNavigator();
+
+const HomeDrawer = () => {
+  return (
+    <Drawer.Navigator>
+      <Drawer.Screen name="Home" component={HomeScreen} />
+      <Drawer.Screen
+        name="Password Forget"
+        component={PasswordForgetScreen}
+      />
+    </Drawer.Navigator>
+  );
+};
 
 const RootStack = createStackNavigator();
 
