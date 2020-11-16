@@ -1,5 +1,8 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import {
+  NavigationContainer,
+  getFocusedRouteNameFromRoute,
+} from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { Button } from 'react-native';
@@ -53,12 +56,13 @@ const App = () => {
         {isAuthenticated ? (
           <RootStack.Screen
             name="Home"
-            component={HomeScreen}
-            options={{
+            component={HomeDrawer}
+            options={({ route }) => ({
+              headerTitle: getFocusedRouteNameFromRoute(route),
               headerRight: () => (
                 <Button onPress={handleSignOut} title="Sign Out" />
               ),
-            }}
+            })}
           />
         ) : (
           <>
