@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, Button, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -9,10 +9,11 @@ const styles = StyleSheet.create({
   },
 });
 
-const SignInScreen = () => {
+const SignInScreen = ({ onSignIn }) => {
   return (
     <View style={styles.container}>
       <Text>Public Sign In Screen</Text>
+      <Button title="Sign In" onPress={onSignIn} />
     </View>
   );
 };
