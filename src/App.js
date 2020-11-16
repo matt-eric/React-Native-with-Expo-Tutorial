@@ -17,12 +17,16 @@ const App = () => {
 
     setIsAuthenticated(true);
   };
-  
+
   return (
     <NavigationContainer>
       <RootStack.Navigator>
         <RootStack.Screen name="Landing" component={LandingScreen} />
-        <RootStack.Screen name="Sign In" component={SignInScreen} />
+        <RootStack.Screen name="Sign In">
+          {(props) => (
+            <SignInScreen {...props} onSignIn={handleSignIn} />
+          )}
+        </RootStack.Screen>
         <RootStack.Screen name="Home" component={HomeScreen} />
       </RootStack.Navigator>
     </NavigationContainer>
