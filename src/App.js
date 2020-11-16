@@ -6,6 +6,7 @@ import {
 } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Button } from 'react-native';
 import LandingScreen from './screens/Landing';
 import SignInScreen from './screens/SignIn';
@@ -33,6 +34,16 @@ const HomeDrawer = () => {
       />
       <Drawer.Screen name="Admin" component={AdminScreen} />
     </Drawer.Navigator>
+  );
+};
+
+const Tab = createBottomTabNavigator();
+
+const HomeTabs = () => {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={HomeScreen} />
+    </Tab.Navigator>
   );
 };
 
