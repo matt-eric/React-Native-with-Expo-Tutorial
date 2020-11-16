@@ -42,6 +42,9 @@ const App = () => {
             <RootStack.Screen
               name="Landing"
               component={LandingScreen}
+              options={{
+                animationTypeForReplace: 'pop',
+              }}
             />
             <RootStack.Screen name="Sign In">
               {(props) => (
