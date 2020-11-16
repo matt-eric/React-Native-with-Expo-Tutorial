@@ -22,7 +22,7 @@ const Drawer = createDrawerNavigator();
 const HomeDrawer = () => {
   return (
     <Drawer.Navigator>
-      <Drawer.Screen name="Home" component={HomeScreen} />
+      <Drawer.Screen name="Home" component={HomeTabs} />
       <Drawer.Screen name="Account" component={AccountScreen} />
       <Drawer.Screen
         name="Password Forget"
